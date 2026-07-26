@@ -38,24 +38,32 @@ window.onload = function () {
     });
 
     // Final surprise
-    const endingBtn = document.getElementById("endingBtn");
+    const bgMusic = document.getElementById("bgMusic");
+bgMusic.volume = 0;
 
-if (endingBtn) {
+const beginBtn = document.getElementById("beginBtn");
 
-    endingBtn.addEventListener("click", () => {
+if (beginBtn) {
+    beginBtn.addEventListener("click", () => {
 
-        document.getElementById("finalScene").scrollIntoView({
+        bgMusic.play().catch(err => console.log(err));
+
+        let volume = 0;
+        const fade = setInterval(() => {
+            if (volume < 1) {
+                volume += 0.05;
+                bgMusic.volume = Math.min(volume, 1);
+            } else {
+                clearInterval(fade);
+            }
+        }, 150);
+
+        document.getElementById("intro").scrollIntoView({
             behavior: "smooth"
         });
 
-        // Play music
-        const music = document.getElementById("bgMusic");
-
-        if (music) {
-            music.currentTime = 0;
-            music.play();
-        }
-
+    });
+}
         // Get all message lines
         const lines = document.querySelectorAll(".finalLine");
 
