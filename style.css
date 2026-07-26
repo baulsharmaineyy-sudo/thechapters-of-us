@@ -63,14 +63,10 @@ margin-bottom:20px;
     text-align:center;
     padding:40px 25px 70px;
 
-    background:
-        linear-gradient(rgba(5,10,30,.22), rgba(5,10,30,.55)),
-        url("hero.jpg");
-
-    background-size:cover;
-    background-position:center 18%;
-    background-repeat:no-repeat;
-
+    background-image: url("hero.jpg");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
     overflow:hidden;
 }
 
