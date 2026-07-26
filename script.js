@@ -11,14 +11,23 @@ window.onload = function () {
     }, 3000);
 
     // Begin button
-    const beginBtn = document.getElementById("beginBtn");
-    if (beginBtn) {
-        beginBtn.addEventListener("click", () => {
-            document.getElementById("intro").scrollIntoView({
-                behavior: "smooth"
-            });
+const beginBtn = document.getElementById("beginBtn");
+
+if (beginBtn) {
+    beginBtn.addEventListener("click", () => {
+
+        // Play music
+        const music = document.getElementById("bgMusic");
+        if (music) {
+            music.play().catch(err => console.log(err));
+        }
+
+        document.getElementById("intro").scrollIntoView({
+            behavior: "smooth"
         });
-    }
+
+    });
+}
 
     // Next chapter buttons
     document.querySelectorAll(".nextBtn").forEach(button => {
@@ -49,13 +58,6 @@ if (endingBtn) {
             behavior: "smooth"
         });
 
-        // Play music
-        const music = document.getElementById("bgMusic");
-
-        if (music) {
-            music.currentTime = 0;
-            music.play();
-        }
         // Get all message lines
         const lines = document.querySelectorAll(".finalLine");
 
