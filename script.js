@@ -38,8 +38,6 @@ window.onload = function () {
     });
 
     // Final surprise
-    const bgMusic = document.getElementById("bgMusic");
-bgMusic.volume = 0;
 
 const beginBtn = document.getElementById("beginBtn");
 
