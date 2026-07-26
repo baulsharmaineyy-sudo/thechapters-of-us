@@ -39,29 +39,23 @@ window.onload = function () {
 
     // Final surprise
 
-const beginBtn = document.getElementById("beginBtn");
+ const endingBtn = document.getElementById("endingBtn");
 
-if (beginBtn) {
-    beginBtn.addEventListener("click", () => {
+if (endingBtn) {
 
-        bgMusic.play().catch(err => console.log(err));
+    endingBtn.addEventListener("click", () => {
 
-        let volume = 0;
-        const fade = setInterval(() => {
-            if (volume < 1) {
-                volume += 0.05;
-                bgMusic.volume = Math.min(volume, 1);
-            } else {
-                clearInterval(fade);
-            }
-        }, 150);
-
-        document.getElementById("intro").scrollIntoView({
+        document.getElementById("finalScene").scrollIntoView({
             behavior: "smooth"
         });
 
-    });
-}
+        // Play music
+        const music = document.getElementById("bgMusic");
+
+        if (music) {
+            music.currentTime = 0;
+            music.play();
+        }
         // Get all message lines
         const lines = document.querySelectorAll(".finalLine");
 
