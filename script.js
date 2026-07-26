@@ -217,13 +217,6 @@ if (endingBtn) {
             behavior: "smooth"
         });
 
-        const music = document.getElementById("bgMusic");
-
-        if (music) {
-            music.currentTime = 0;
-            music.play();
-        }
-
         // Your fireworks and hearts code...
 
     });
