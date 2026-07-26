@@ -1,4 +1,4 @@
-*{
+hi*{
 margin:0;
 padding:0;
 box-sizing:border-box;
@@ -65,7 +65,7 @@ margin-bottom:20px;
 
     background:
     linear-gradient(rgba(5,10,30,.22), rgba(5,10,30,.55)),
-    url("images/hero.jpg");
+    url("hero.jpg");
 
     background-size:cover;
     background-position:center 18%;
